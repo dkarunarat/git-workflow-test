@@ -66,7 +66,9 @@ $ git commit
 # push the branch to origin when you are ready to create a pull request
 $ git push -u origin <feature-branch-name>
 ```
+
 [Directions for creating pull requests on github](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request)
+
 [blog post - Writing pull  requests](https://github.blog/2015-01-21-how-to-write-the-perfect-pull-request/)
 
 After the PR is reviewed and approved, Merge it into the dev branch
