@@ -1,10 +1,4 @@
-# Git Workflow Test
-
-Dillinger is a cloud-enabled, mobile-ready, offline-storage, AngularJS powered HTML5 Markdown editor.
-
-  - Type some Markdown on the left
-  - See HTML in the right
-  - Magic
+# Git Workflow
 
 ## The main branches
 The central repo holds two main branches with an infinite lifetime:
