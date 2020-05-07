@@ -111,7 +111,7 @@ This new release branch may exist for a while, until the release is rolled out d
 #### Finishing a release branch
 
 When the state of the release branch is ready to become a real release, some actions need to be carried out. First, the release branch is merged into `master` (since every commit on `master` is a new release *by definition*). Next, that commit on `master` must be tagged for easy future reference to this historical version.
- Finally, the changes made on the release branch need to be merged back into `dev`, so that future releases also contain these bug fixes
+Finally, the changes made on the release branch need to be merged back into `dev`, so that future releases also contain these bug fixes
 
 If the merge to master is being performed locally, 
 ```sh
@@ -130,3 +130,4 @@ $ git tag -a 0.0.1 -m "Release 0.0.1"
 ### Push the commits along with the tags
 $ git push --follow-tags
 ```
+After the commits and tags have been pushed to the remote repository, Edit the tag and provide a description so it can be published as a release on github. 
