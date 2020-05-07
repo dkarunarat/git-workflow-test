@@ -1,10 +1,12 @@
 # Git Workflow
 
+## Table of Contents
 * [The main branches](#the-main-branches)
-
 * [Supporting branches](#supporting-branches)
      - [Feature branches](#feature-branches)
-
+     -- [Creating a Feature branch](#creating-a-feature-branch)
+     -- [Incorporating a Feature into dev](#incorporating-a-feature-into-dev)
+     - [Release branches](#release-branches)
 
 ## The main branches
 The central repo holds two main branches with an infinite lifetime:
@@ -33,14 +35,37 @@ These branches are categorized by how they are used:
 Each of these branches have a specific purpose and are bound to strict rules as to which branches may be their **originating branch** and which branches must be their **merge targets**. 
 
 ### Feature branches
-branch off from: **dev**
-merge back into: **dev**
-Branch naming convention: anything except *master, dev, release-\*, or hotfix-\**
+branch off from --> *dev*
+merge back into --> *dev*
 
-Feature branches (or sometimes called topic branches) are used to develop new features for the upcoming or a distant future release.
-The following commands first check you into the dev branch and then create a feature branch off of dev.
+*TODO: Decide on branch naming convention
+Eg:  
+feature/sauto-43
+SAUTO-43-description*
 
+#### Creating a feature branch
+Feature branches are used to develop new features for the upcoming or a distant future release.
+When creating a new feature branch, ensure that you are have the latest version of the *dev* branch available.
 ```sh
 $ git checkout dev
+$ git pull origin dev
+```
+Create a local feature branch based on the *dev* branch. 
+```sh
 $ git checkout -b <feature-branch-name>
 ```
+
+#### Incorporating a feature into dev
+After committing work to the branch locally, push the commits to the remote repository and create a pull request from the feature branch to the *dev* branch on github. (*The -u flag is shorthand for --set-upstream which connects the local branch to its couterpart on the remote repository*)  
+
+```sh
+# Work on the branch and commit often
+$ git commit
+
+# push the branch to origin when you are ready to create a pull request
+$ git push -u origin <feature-branch-name>
+```
+[Directions for creating pull requests on github](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request)
+[blog post - Writing pull  requests](https://github.blog/2015-01-21-how-to-write-the-perfect-pull-request/)
+
+After the PR is reviewed and approved, Merge it into the dev branch
