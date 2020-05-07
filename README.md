@@ -35,8 +35,7 @@ These branches are categorized by how they are used:
 Each of these branches have a specific purpose and are bound to strict rules as to which branches may be their **originating branch** and which branches must be their **merge targets**. 
 
 ### Feature branches
-branch off from --> *dev*
-merge back into --> *dev*
+> branch off from --> *dev* || merge back into --> *dev*
 
 *TODO: Decide on branch naming convention
 
@@ -74,8 +73,7 @@ $ git push -u origin <feature-branch-name>
 After the PR is reviewed and approved, Merge it into the dev branch
 
 ### Release branches
-branch off from --> *dev*
-merge back into --> *dev & master*
+> branch off from --> *dev* || merge back into --> *dev & master*
 
 *TODO: Decide on branch naming convention
 
