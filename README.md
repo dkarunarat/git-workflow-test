@@ -1,8 +1,10 @@
 # Git Workflow
 
-[The main branches](#the-main-branches)
-[The main branches](#supporting-branches)
-   - [Feature branches](#feature-branches)
+* [The main branches](#the-main-branches)
+
+* [Supporting branches](#supporting-branches)
+     - [Feature branches](#feature-branches)
+
 
 ## The main branches
 The central repo holds two main branches with an infinite lifetime:
