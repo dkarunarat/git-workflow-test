@@ -23,17 +23,17 @@ fi
 git checkout $releaseBranch
 git pull origin $releaseBranch
 git checkout $masterBranch
-git merge --no-ff --log $releaseBranch
+git merge --no-ff --log -m "Merge $releaseBranch into $masterBranch" $releaseBranch
  
 # create tag for new version from master
 git tag $versionLabel -m "Release $versionLabel"
 
-# Push the release
+# Push the changes to master along with the new tag
 git push --follow-tags
 
 # merge release branch with the new version number back into dev
 git checkout $devBranch
-git merge --no-ff --log $releaseBranch
+git merge --no-ff -m "Merge $releaseBranch into $devBranch" --log $releaseBranch
  
 # remove release branch
 git branch -d $releaseBranch
