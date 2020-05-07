@@ -1,3 +1,4 @@
+
 # Git Workflow
 
 ## Table of Contents
@@ -7,6 +8,8 @@
           - [Creating a Feature branch](#creating-a-feature-branch)
           - [Incorporating a Feature into dev](#incorporating-a-feature-into-dev)
      - [Release branches](#release-branches)
+	      - [Creating a release branch](#creating-a-release-branch)
+          - [Finishing a release branch](#finishing-a-release-branch)
 
 ## The main branches
 The central repo holds two main branches with an infinite lifetime:
@@ -80,3 +83,50 @@ After the PR is reviewed and approved, Merge it into the dev branch
 Eg:  
 - release/0.0.1
 - release-0.1.1*
+
+Release branches support preparation of a new production release. They allow for last-minute changes, minor bug fixes and preparing meta-data for a release (version number, build dates, etc.). 
+
+By doing all of this work on a release branch, the  `dev`  branch is cleared to receive features for the next big release.
+
+The key moment to branch off a new release branch from  `dev`  is when dev (almost) reflects the desired state of the new release. At least all features that are targeted for the release-to-be-built must be merged in to  `dev`  at this point in time. All features targeted at future releases may not—they must wait until after the release branch is branched off.
+
+It is exactly at the start of a release branch that the upcoming release gets assigned a version number—not any earlier. Up until that moment, the  `dev`  branch reflected changes for the “next release”, but it is unclear whether that “next release” will eventually become 0.3 or 1.0, until the release branch is started. That decision is made on the start of the release branch and is carried out by the project’s rules on version number bumping.
+
+#### Creating a release branch
+
+***This can be done on the github website  as well TODO: Check best way to do it*** 
+
+Ensure that you are have the latest version of the *dev* branch available.
+```sh
+$ git checkout dev
+$ git pull origin dev
+```
+Create a local release branch based on the *dev* branch.
+
+```sh
+$ git checkout -b <release-version> dev
+```
+This new release branch may exist for a while, until the release is rolled out definitely. During that time, bug fixes may be applied in this branch (rather than on the `dev` branch). Adding large new features here is strictly prohibited. They must be merged into `dev`, and therefore, must wait for the next big release.
+
+#### Finishing a release branch
+
+When the state of the release branch is ready to become a real release, some actions need to be carried out. First, the release branch is merged into `master` (since every commit on `master` is a new release *by definition*). Next, that commit on `master` must be tagged for easy future reference to this historical version.
+ Finally, the changes made on the release branch need to be merged back into `dev`, so that future releases also contain these bug fixes
+
+If the merge to master is being performed locally, 
+```sh
+#### Update the local copy of the release branch
+$ git checkout release-0.0.1
+$ git pull origin release-0.0.1
+
+### Checkout master, update and merge with the release branch
+$ git checkout master
+$ git pull origin master
+$ git merge --no-ff release-0.0.1
+
+### Create a tag annotated with the version number
+$ git tag -a 0.0.1
+
+### Push the commits along with the tags
+$ git push --follow-tags
+```
