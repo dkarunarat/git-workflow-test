@@ -1,5 +1,9 @@
 # Git Workflow
 
+[TOCM]
+
+[TOC]
+
 ## The main branches
 The central repo holds two main branches with an infinite lifetime:
    - master
