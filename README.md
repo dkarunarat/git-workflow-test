@@ -4,8 +4,8 @@
 * [The main branches](#the-main-branches)
 * [Supporting branches](#supporting-branches)
      - [Feature branches](#feature-branches)
-     -- [Creating a Feature branch](#creating-a-feature-branch)
-     -- [Incorporating a Feature into dev](#incorporating-a-feature-into-dev)
+          - [Creating a Feature branch](#creating-a-feature-branch)
+          - [Incorporating a Feature into dev](#incorporating-a-feature-into-dev)
      - [Release branches](#release-branches)
 
 ## The main branches
@@ -69,3 +69,12 @@ $ git push -u origin <feature-branch-name>
 [blog post - Writing pull  requests](https://github.blog/2015-01-21-how-to-write-the-perfect-pull-request/)
 
 After the PR is reviewed and approved, Merge it into the dev branch
+
+### Release branches
+branch off from --> *dev*
+merge back into --> *dev & master*
+
+*TODO: Decide on branch naming convention
+Eg:  
+release/0.0.1
+release-0.1.1*
