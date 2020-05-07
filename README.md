@@ -39,9 +39,10 @@ branch off from --> *dev*
 merge back into --> *dev*
 
 *TODO: Decide on branch naming convention
+
 Eg:  
-feature/sauto-43
-SAUTO-43-description*
+- feature/sauto-43
+- SAUTO-43-description*
 
 #### Creating a feature branch
 Feature branches are used to develop new features for the upcoming or a distant future release.
@@ -75,6 +76,7 @@ branch off from --> *dev*
 merge back into --> *dev & master*
 
 *TODO: Decide on branch naming convention
+
 Eg:  
-release/0.0.1
-release-0.1.1*
+- release/0.0.1
+- release-0.1.1*
