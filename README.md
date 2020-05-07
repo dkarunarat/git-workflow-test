@@ -125,7 +125,7 @@ $ git pull origin master
 $ git merge --no-ff release-0.0.1
 
 ### Create a tag annotated with the version number
-$ git tag -a 0.0.1
+$ git tag -a 0.0.1 -m "Release 0.0.1"
 
 ### Push the commits along with the tags
 $ git push --follow-tags
