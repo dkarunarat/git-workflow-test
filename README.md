@@ -25,3 +25,16 @@ These branches are categorized by how they are used:
    - Hotfix branches
   
 Each of these branches have a specific purpose and are bound to strict rules as to which branches may be their **originating branch** and which branches must be their **merge targets**. 
+
+### Feature branches
+branch off from: **dev**
+merge back into: **dev**
+Branch naming convention: anything except *master, dev, release-\*, or hotfix-\**
+
+Feature branches (or sometimes called topic branches) are used to develop new features for the upcoming or a distant future release.
+The following commands first check you into the dev branch and then create a feature branch off of dev.
+
+```sh
+$ git checkout dev
+$ git checkout -b <feature-branch-name>
+```
