@@ -43,8 +43,9 @@ Each of these branches have a specific purpose and are bound to strict rules as 
 *TODO: Decide on branch naming convention
 
 Eg:  
-- feature/sauto-43
-- SAUTO-43-description*
+- SAUTO-43-description
+- SAUTO-39-scheduler-ui
+- SAUTO-39-scheduler-integration-plus-backend
 
 #### Creating a feature branch
 Feature branches are used to develop new features for the upcoming or a distant future release.
